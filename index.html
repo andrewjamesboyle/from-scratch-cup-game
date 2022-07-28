@@ -17,12 +17,49 @@
 
 <body>
     <header>
-        <img src="/assets/html_css_js.png">
-        <h1>Web App</h1>
+        <!-- <img src="/assets/html_css_js.png"> -->
+        <!-- <h1>Web App</h1> -->
     </header>
 
     <main>
-
+        <h1>Welcome to Portlandia!</h1>
+        <h3>Choose Your Lifestyle</h3>
+            <section class="lifestyle-options">
+                <section id="transportation">Transportation Method
+                    <select id="transportation-dropdown">
+                        <option value="bike">Bike</option>
+                        <option value="public-transit">Public Transit</option>
+                        <option value="prius">Prius</option>
+                    </select>
+                    <img id="transportation-img" />
+                </section>
+                <section id="pet">Your Pet
+                    <br>
+                    <select id="pet-dropdown">
+                        <option value="pig">Potbelly Pig</option>
+                        <option value="chicken">Chicken</option>
+                        <option value="dog">Dog</option>
+                    </select>
+                    <img id="pet-img" />
+                </section>
+                <section id="beverage">Favorite Beverage      
+                    <select id="coffee-dropdown">
+                        <option value="latte">Latte</option>
+                        <option value="matcha">Matcha</option>
+                        <option value="kombucha">Kombucha</option>
+                    </select>
+                    <img id="caffeine-img" />
+                </section>
+            </section>
+                <section id="score">
+                    <div id="display-scores"></div>
+                </section>
+            <section id="slogan">What's Your Favorite 'Overheard Portlandia' slogan?
+                <input id="overheard-portlandia">
+                <button id="overheard-portlandia-btn">ADD</button>
+                <div id="display-slogans"></div>
+            </section>
+        
     </main>
 
     <footer>&copy;2022 Software Developer</footer>

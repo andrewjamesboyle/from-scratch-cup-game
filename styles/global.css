@@ -7,7 +7,7 @@
 body {
     height: 100vh;
     font-family: 'Rubik', san-serif;
-    background: var(--background);
+    background: var(--background);  
     display: grid;
     grid-template-rows: auto 1fr auto;
 }
@@ -21,7 +21,27 @@ header {
 }
 
 main {
+    background-color: lightslategray;
     padding: 20px;
+    display: grid;
+    grid-template-rows: .5fr .2fr 3fr .5fr 1fr;
+}
+
+h1, h3 {
+    display: flex;
+    justify-content: center;
+}
+
+.lifestyle-options {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#transportation, #pet, #beverage, #score, #slogan {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
 }
 
 footer {
@@ -33,3 +53,9 @@ footer {
     justify-content: flex-end;
     background-color: var(--footer-background);
 }
+
+img {
+    height: 200px;
+    width: 300px;
+}
+
