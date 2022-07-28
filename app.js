@@ -35,13 +35,13 @@ coffeeDropdownEl.addEventListener('change', () => {
 });
 
 sloganButton.addEventListener('click', () => {
-  slogans.push(sloganInputEl.value);
-  sloganInputEl.value = '';
-  displaySlogans();
+    slogans.push(sloganInputEl.value);
+    sloganInputEl.value = '';
+    displaySlogans();
 });
 
 function displayStats() {
-    displayScoresEl.textContent = `You have changed your main transportation method ${timesTransportationChanged} times, you've changed your favorite pet ${timesPetChanged} times, and you've changed your favorite beverage ${timesCaffeineChanged} times.`;
+    displayScoresEl.textContent = `You have changed your main transportation method ${timesTransportationChanged} times, you've changed your pet ${timesPetChanged} times, and you've changed your favorite beverage ${timesCaffeineChanged} times.`;
 }
 
 function displaySlogans() {
@@ -51,6 +51,5 @@ function displaySlogans() {
         newPtag.textContent = slogan;
         displaySlogansEl.append(newPtag);
     }
-
 }
 
