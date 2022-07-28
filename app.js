@@ -5,28 +5,52 @@ const petDropdownEl = document.getElementById('pet-dropdown');
 const petImgTag = document.getElementById('pet-img');
 const coffeeDropdownEl = document.getElementById('coffee-dropdown');
 const caffeineImgTag = document.getElementById('caffeine-img');
+const displayScoresEl = document.getElementById('display-scores');
+const sloganInputEl = document.getElementById('overheard-portlandia');
+const sloganButton = document.getElementById('overheard-portlandia-btn');
+const displaySlogansEl = document.getElementById('display-slogans');
 
-// let state
+const slogans = [''];
+
 let timesTransportationChanged = 0;
 let timesPetChanged = 0;
 let timesCaffeineChanged = 0;
 
-// set event listeners 
-  // get user input
-  // use user input to update state 
-  // update DOM to reflect the new state
-
 transportationDropdownEl.addEventListener('change', () => {
     transportationImgTag.src = `./assets/${transportationDropdownEl.value}-img.png`;
     timesTransportationChanged++;
+    displayStats();
 });
 
 petDropdownEl.addEventListener('change', () => {
     petImgTag.src = `./assets/${petDropdownEl.value}-img.png`;
-    timesPetChanged = 0;
+    timesPetChanged++;
+    displayStats();
 });
 
 coffeeDropdownEl.addEventListener('change', () => {
     caffeineImgTag.src = `./assets/${coffeeDropdownEl.value}-img.png`;
-    timesCaffeineChanged++
-})
+    timesCaffeineChanged++;
+    displayStats();
+});
+
+sloganButton.addEventListener('click', () => {
+  slogans.push(sloganInputEl.value);
+  sloganInputEl.value = '';
+  displaySlogans();
+});
+
+function displayStats() {
+    displayScoresEl.textContent = `You have changed your main transportation method ${timesTransportationChanged} times, you've changed your favorite pet ${timesPetChanged} times, and you've changed your favorite beverage ${timesCaffeineChanged} times.`;
+}
+
+function displaySlogans() {
+    displaySlogansEl.textContent = '';
+    for (let slogan of slogans) {
+        const newPtag = document.createElement('p');
+        newPtag.textContent = slogan;
+        displaySlogansEl.append(newPtag);
+    }
+
+}
+
